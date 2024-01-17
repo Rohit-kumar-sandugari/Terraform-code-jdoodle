@@ -1,8 +1,8 @@
 
 resource "aws_launch_configuration" "as_conf" {
   name_prefix   = "autoscaling-example-"
-  image_id      = "ami-0b0ea68c435eb488d" # Replace with the correct Ubuntu AMI
-  instance_type = "t2.micro"   # Replace with the desired instance type
+  image_id      = "ami-0b0ea68c435eb488d"
+  instance_type = "t2.micro"  
   iam_instance_profile = aws_iam_instance_profile.ec2_ssm_instance_profile.name
   user_data = <<-EOF
               #!/bin/bash
@@ -54,9 +54,6 @@ vpc_zone_identifier  = data.aws_subnets.default.ids
     propagate_at_launch = true
   }
 
-  // Define health check type and grace period if necessary
-  // health_check_type           = "EC2"
-  // health_check_grace_period   = 300
 }
 
 resource "aws_autoscaling_notification" "notifications" {
