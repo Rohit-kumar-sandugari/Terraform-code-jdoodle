@@ -19,9 +19,3 @@ variable "notification_email" {
   type        = string
   default     = "rohithkumar4490@gmail.com"
 }
-
-
-// Define a variable for the desired capacity of the Autoscaling Group if needed
-// variable "desired_capacity" { ... }
-
-// Define other necessary variables such as AMI ID, VPC ID, Subnet IDs, etc.
